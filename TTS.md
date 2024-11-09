@@ -30,18 +30,18 @@ tts --model_info_by_name tts_models/zh-CN/baker/tacotron2-DDC-GST
 # 转换
 tts --text "知是行之始，行是知之成。" --out_path aaa.wav --model_name tts_models/zh-CN/baker/tacotron2-DDC-GST
 ```
-+ [模型声音Demo](https://mbarnig.github.io/TTS-Models-Comparison/)
-+ [模型下载](https://github.com/coqui-ai/TTS/releases/tag/v0.6.1_models)
-
-
-#### Parler-TTS
 
 
 
-
+#### XTTS实现声音克隆+文字转语言
+XTTS 是一个语音生成模型，不需要过多的训练数据，仅使用一个 6 秒的音频文件即可将语音克隆为不同的语言。
+```shell
+docker run -e COQUI_TOS_AGREED=1 --rm -p 8000:80 ghcr.io/coqui-ai/xtts-streaming-server:latest-cpu
+```
 
 
 ### 参考
 + [《TTS》](https://github.com/mozilla/TTS)
 + [《docker-mozillatts》](https://github.com/synesthesiam/docker-mozillatts)
 + [《语音合成工具Coqui TTS安装及体验》](https://blog.csdn.net/tangyin025/article/details/129525878)
++ [《Python调用XTTS实现声音克隆+文字转语言》](https://blog.csdn.net/watson2017/article/details/136619471)
