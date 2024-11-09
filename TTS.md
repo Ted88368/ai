@@ -36,7 +36,13 @@ tts --text "知是行之始，行是知之成。" --out_path aaa.wav --model_nam
 #### XTTS实现声音克隆+文字转语言
 XTTS 是一个语音生成模型，不需要过多的训练数据，仅使用一个 6 秒的音频文件即可将语音克隆为不同的语言。
 ```shell
+# 内部要下载模型，不翻墙也麻烦
 docker run -e COQUI_TOS_AGREED=1 --rm -p 8000:80 ghcr.io/coqui-ai/xtts-streaming-server:latest-cpu
+
+# 本地编译
+cd xtts-streaming-server/server
+conda create -n tts python==3.11
+python -m pip install -r requirements_cpu.txt
 ```
 
 
